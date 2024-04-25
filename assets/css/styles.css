@@ -1,0 +1,199 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 { 
+    margin-bottom: 1.6rem;
+    text-align: center;
+    color: #333;
+}
+
+#box-shadow-generator {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#controls-container,
+#preview {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Controles */
+#controls-container .form-control {
+    display: flex;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px dashed #ccc;
+    column-gap: 1rem;
+}
+
+.form-control .range-input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.range-input label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.range-input input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    background-color: #d3d3d3;
+    outline: none;
+}
+
+.range-input input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: #e9d60a;
+    cursor: pointer;
+
+}
+
+.form-control .reference-input {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 4px;
+}
+
+.form-control .reference-input input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+/* Novas funcionalidades */
+.form-control .reference-input #color-value {
+    min-width: 100px;
+}
+
+.form-control .range-input #inset {
+    align-self: start;
+    width: 20px;
+    height: 20px;
+}
+
+/* Preview */
+#preview #box {
+    width: 100%;
+    height: 300px;
+    background-color: #e9d60a;
+}
+
+/* Área de geração */
+#generated-rule {
+    text-align: center;
+}
+
+#generated-rule #rules-area {
+    background-color: #d3d3d3;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #e9d60a;
+    padding: 1rem 0 0 1rem;
+    transition: .4s;
+    cursor: pointer;
+}
+
+#generated-rule #rules-area:hover {
+    background-color: #dfdfdf;
+}
+
+#generated-rule #rules-area p {
+    margin-bottom: .5rem;
+    padding-right: 1rem;
+}
+
+#generated-rule #rules-area p:last-child {
+    font-style: italic;
+    margin-bottom: .3rem;
+    margin-right: .3rem;
+    padding-right: 0;
+    font-size: 10px;
+}
+
+#generated-rule #copy-instructions {
+    text-align: right;
+}
+
+footer {
+    width: 100%;
+    margin: 50px 0 10px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 20px;
+}
+
+footer p {
+    color: #000;
+}
+
+footer p a {
+    text-transform: uppercase;
+    color: #aaa;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .5s;
+}
+
+footer p a:hover {
+    color: #e9d60a;
+}
+
+/* responsivo */
+@media(max-width: 900px) {
+    #generated-rule #rules-area {
+        width: 750px;
+    }
+}
+
+@media(max-width: 426px) {
+    #box-shadow-generator {
+        flex-direction: column;
+    }
+
+    #controls-container,
+    #preview {
+        padding: 1rem 2rem;
+    }
+
+    #preview #box {
+        width: 60%;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    #generated-rule {
+        margin-top: 2rem;
+    }
+
+    #generated-rule h2 {
+        margin: 0 1rem 1.6rem;
+        font-size: 1.3rem;
+    }
+
+    #generated-rule p {
+        font-size: .8rem;
+    }
+
+    #generated-rule #rules-area {
+        width: 400px;
+    }
+
+    #generated-rule #rules-area p:last-child {
+        font-size: 8px;
+    }
+}
